@@ -1,0 +1,227 @@
+{
+	"info": {
+		"_postman_id": "0090c1cc-8c37-4693-ba94-294832cf3fc0",
+		"name": "pitch tesk",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"namandhuri01@gmail.com\",\n\t\"password\":\"12345678\"\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/login",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rgister",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "rajnish",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "kumar",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "test1@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "c_password",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": ""
+						},
+						{
+							"key": "profile[title]",
+							"value": "developer",
+							"type": "text"
+						},
+						{
+							"key": "profile[company_name]",
+							"value": "ucode",
+							"type": "text"
+						},
+						{
+							"key": "profile[company_address]",
+							"value": "mohali",
+							"type": "text"
+						},
+						{
+							"key": "profile[city]",
+							"value": "mohali",
+							"type": "text"
+						},
+						{
+							"key": "profile[state]",
+							"value": "punjab",
+							"type": "text"
+						},
+						{
+							"key": "profile[zip]",
+							"value": "160060",
+							"type": "text"
+						},
+						{
+							"key": "profile[country]",
+							"value": "india",
+							"type": "text"
+						},
+						{
+							"key": "profile[contact_email]",
+							"value": "info@ucode.com",
+							"type": "text"
+						},
+						{
+							"key": "profile[type]",
+							"value": "investor",
+							"type": "text"
+						},
+						{
+							"key": "profile[sub_type]",
+							"value": "private",
+							"type": "text"
+						},
+						{
+							"key": "profile[industry]",
+							"value": "i am looking for a business",
+							"type": "text"
+						},
+						{
+							"key": "profile[size]",
+							"value": "10-20",
+							"type": "text"
+						},
+						{
+							"key": "profile[interest]",
+							"value": "start up stage",
+							"type": "text"
+						},
+						{
+							"key": "profile[verification]",
+							"value": "fbfdbfdbfbsddsvfvfd",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show Login User Detail",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImJhZmYyODBkOTgxYWJhMjc3MzA3ZWJiYzI3ZWEwZjE0OWRjODgyZDZjNjEyNjc5NDhkMjZlNzcxMjZkOTMzZWE1ZTcxMDA1NmQzNDA5NWU5In0.eyJhdWQiOiIxIiwianRpIjoiYmFmZjI4MGQ5ODFhYmEyNzczMDdlYmJjMjdlYTBmMTQ5ZGM4ODJkNmM2MTI2Nzk0OGQyNmU3NzEyNmQ5MzNlYTVlNzEwMDU2ZDM0MDk1ZTkiLCJpYXQiOjE1OTY4NzYwNzcsIm5iZiI6MTU5Njg3NjA3NywiZXhwIjoxNjI4NDEyMDc3LCJzdWIiOiI3Iiwic2NvcGVzIjpbXX0.kEjNfdY22wsIRAtCHw7k1Xba-h9LE-TvvP5zm3TGsmb6ll9jUX9L0N2dEcJomlxvmS7gL7z8xC6OY8I0IL6nSusEfp8bH-L8LCJ-tk6nN8r-2_OY_MM0ewariZgfU-j7R0hz15obml6HSPJfCTHbSXtGp540Ar15XwV_WybN7R4t7fMqzJgb2PxlsnNDjUTtptMFwTKbWIR5FTDrEBwwbmnjMuZOk_g3n9c_3KWfvXJRA3g2HvzST80j83Ta4zVX_TW8TrH5Mu8evO2TPYsfC74iThrr-RDvqV2jxhrK4nq_ZUKiq-kNi7lCKFhvDUQa2JbGpha0AxKFmJyQNiW1FgA-5FzHy7-MWx5oPUqmxYCEsUmZ-jnMYhdrGadKrqXrkQ5ccioi8C74NjKDwSjBEv-0X8dH_YjPVVMjpMCNG3b3EP88jzKkr_Bi2SJhRCgTd11BwsBi6i8JmeAWEGtdUiWO0yLf3ZjCJ1uz5Dg_151ZAVK8Sy53xe0JL0nzWWTl4iwO7VJ-E8-IqWfA__k8e3U_o6J9ZK2fZ-G3qywsdjm-dvFA1mcaKR_my3I5_UhJ7kiUxL3xkBrdGLHEtkNM_j11dxFt-3d8413gTPPdJXxp3mUOj_b2ratDTjecuw5-8xHPKbYh2lGYXnX6j2h0U2qZoZGfJ6FVwgrWA2QcX9M",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/details",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"details"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
