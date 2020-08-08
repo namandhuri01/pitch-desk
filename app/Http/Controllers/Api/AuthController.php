@@ -35,20 +35,10 @@ class AuthController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function register(Request $request)
+    public function register(ProfileRequest $request)
     {
         // dd($request->all());
         $settingData = $request->profile;
-        $validator = Validator::make($request->all(), [
-            'first_name'    => 'bail|required|string',
-            'last_name'     => 'bail|required|string',
-            'email'         => 'bail|required|email|unique:users',
-            'password'      => 'bail|required',
-            'c_password'    => 'bail|required|same:password',
-        ]);
-        if ($validator->fails()) {
-            return response()->json(['error'=>$validator->errors()], 401);
-        }
 
         $input = $request->all();
         $input['password'] = bcrypt($input['password']);
@@ -60,7 +50,7 @@ class AuthController extends Controller
             $settingData['photo'] = $this->saveImage($request, $user->id);
         }
         if($request->profile) {
-            $this->saveProfile($settingData, $user->id);
+            $user->profile()->updateOrCreate(['user_id' => $user->id], $settingData);
         }
 
         return response()->json(['success'=>$success], $this-> successStatus);
@@ -99,9 +89,10 @@ class AuthController extends Controller
         }
     }
 
-    protected function saveProfile($settingData, $id) {
-        $profile = UserProfile::updateOrCreate(['user_id' => $id], $settingData);
+    // protected function saveProfile($settingData, $id) {
 
-        return $profile;
-    }
+    //     $profile = UserProfile::updateOrCreate(['user_id' => $id], $settingData);
+
+    //     return $profile;
+    // }
 }
