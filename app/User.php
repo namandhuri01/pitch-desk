@@ -5,11 +5,14 @@ namespace App;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Rennokki\Befriended\Traits\Follow;
+use Rennokki\Befriended\Contracts\Following;
+use Rennokki\Befriended\Scopes\FollowFilterable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements Following
 {
-    use HasApiTokens, Notifiable;
+    use HasApiTokens, Notifiable, Follow, FollowFilterable;
 
     /**
      * The attributes that are mass assignable.
@@ -58,5 +61,9 @@ class User extends Authenticatable
     public function profile()
     {
         return $this->hasOne('App\UserProfile');
+    }
+
+    public function tweets(){
+        return $this->hasMany('App\Tweet');
     }
 }

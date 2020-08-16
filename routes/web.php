@@ -1,5 +1,5 @@
 <?php
-
+use App\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,9 +12,16 @@
 */
 
 Route::get('/', function () {
+
     return view('welcome');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('users', 'UserController');
+
+Route::post('follow','FeedController@follow')->name('follow');
+Route::post('unfollow','FeedController@unFollow')->name('unfollow');
+Route::get('allFollowers','FeedController@getFollower')->name('authfollower');

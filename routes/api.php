@@ -22,4 +22,6 @@ Route::post('register', 'Api\AuthController@register');
 
 Route::group(['middleware' => 'auth:api'], function(){
     Route::post('details', 'Api\AuthController@details');
+    Route::get('follow', 'Api\FeedController@follow');
+    Route::get('unfollow', 'Api\FeedController@unfollow');
 });
