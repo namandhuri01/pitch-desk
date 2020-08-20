@@ -31,6 +31,8 @@ class CreateUserProfilesTable extends Migration
             $table->string('size');
             $table->string('interest');
             $table->text('verification');
+            $table->string('payment_information');
+            $table->string('company_description');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });

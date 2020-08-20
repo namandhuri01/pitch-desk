@@ -17,6 +17,8 @@ class ModifyUsersTable extends Migration
             $table->dropColumn('name');
             $table->string('first_name');
             $table->string('last_name');
+            $table->string('username')->unique();
+
         });
     }
 
@@ -30,6 +32,7 @@ class ModifyUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('first_name');
             $table->dropColumn('last_name');
+            $table->dropColumn('username');
             $table->string('name');
          });
     }

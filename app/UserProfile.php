@@ -9,7 +9,7 @@ class UserProfile extends Model
 {
     protected $fillable = [
         'user_id','title' ,'company_name','company_address','city','state','zip','country',
-        'contact_email','photo','type','sub_type','industry','size' ,'interest','verification'
+        'contact_email','photo','type','sub_type','industry','size' ,'interest','verification','payment_information','company_description'
     ];
 
     protected $appends = ['thumb_image'];
