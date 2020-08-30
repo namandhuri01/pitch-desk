@@ -10,7 +10,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ProfileRequest;
-use Intervention\Image\Exception\NotReadableException;
+use Illuminate\Validation\Rule;
+// use Intervention\Image\Exception\NotReadableException;
 
 class AuthController extends Controller
 {
@@ -25,7 +26,7 @@ class AuthController extends Controller
         if(Auth::attempt(['username' => request('username'), 'password' => request('password')])){
             $user = Auth::user();
             $success['token'] =  $user->createToken('MyApp')-> accessToken;
-            return response()->json(['success' => $success], $this-> successStatus);
+            return response()->json(['status'=> true,'message'=> 'Login successfully','data' => $success], $this-> successStatus);
         }
         else{
             return response()->json(['error'=>'Unauthorised'], 401);
