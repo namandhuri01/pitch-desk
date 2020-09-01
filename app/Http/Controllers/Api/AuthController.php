@@ -23,16 +23,26 @@ class AuthController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function login(){
+
+        $validator = Validator::make(request()->all(), [
+            'username' => 'required|string',
+			'password' => 'required|string',
+
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['status'=> false,'message'=> 'Please Check Your credentials.','data' => [] ], 422);
+        }
         if(Auth::attempt(['username' => request('username'), 'password' => request('password')])){
             $user = Auth::user();
             $success['token'] =  $user->createToken('MyApp')-> accessToken;
             return response()->json(['status'=> true,'message'=> 'Login successfully','data' => $success], $this-> successStatus);
         }
         else{
-            return response()->json(['error'=>'Unauthorised'], 401);
+            return response()->json(['status'=> false,'message'=> 'Credentails not valid','data' => [] ], 401);
         }
     }
-/**
+    /**
      * Register api
      *
      * @return \Illuminate\Http\Response
