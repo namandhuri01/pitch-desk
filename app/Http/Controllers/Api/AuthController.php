@@ -56,7 +56,7 @@ class AuthController extends Controller
         $input['password'] = bcrypt($input['password']);
         $user = User::create($input);
         $success['token'] =  $user->createToken('MyApp')->accessToken;
-        $success['name'] =  $user->first_name;
+        // $success['name'] =  $user->first_name;
 
         if($request->file('photo')) {
             $settingData['photo'] = $this->saveImage($request, $user->id);
@@ -65,7 +65,7 @@ class AuthController extends Controller
             $user->profile()->updateOrCreate(['user_id' => $user->id], $settingData);
         }
 
-        return response()->json(['success'=>$success], $this-> successStatus);
+        return response()->json(['status'=> true,'message' => 'You are registered successfully','data'=>$success], $this-> successStatus);
     }
     /**
      * details api
