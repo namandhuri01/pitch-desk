@@ -27,7 +27,6 @@ class ProfileRequest extends FormRequest
         return [
             'first_name'                        => 'bail|required|string',
             'last_name'                         => 'bail|required|string',
-            'email'                             => 'bail|required|email|unique:users',
             'username'                          => 'bail|required|unique:users,username',
             'password'                          => 'bail|required|string',
             'c_password'                        => 'bail|required|same:password',
@@ -53,7 +52,6 @@ class ProfileRequest extends FormRequest
     public function messages()
     {
         return [
-            'email.unique'     => 'email is already exist',
             'username.unique'  => 'username is already exist',
         ];
     }

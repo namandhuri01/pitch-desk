@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTweetLikesTable extends Migration
+class CreatePostImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateTweetLikesTable extends Migration
      */
     public function up()
     {
-        Schema::create('tweet_likes', function (Blueprint $table) {
+        Schema::create('post_images', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('tweet_id');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('post_id');
+            $table->string('path');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateTweetLikesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tweet_likes');
+        Schema::dropIfExists('post_images');
     }
 }

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use Auth;
 use App\User;
-use App\Tweet;
+use App\Post;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\HttpException;
@@ -16,15 +16,15 @@ class FeedController extends Controller
     public function index() {
         $userId = Auth::user()->id;
 
-        $tweets = Tweet::with([
+        $tweets = Post::with([
             'user' => function($query) {
                 return $query->with([
                     'profile'
                 ]);
             },
-            'tweetComments.user.profile',
-            'tweetImages',
-            'tweetLikes.user.profile',
+            'postComments.user.profile',
+            'postImages',
+            'postLikes.user.profile',
         ])->where('user_id', '=', $userId)->get();
 
         return response()->json([

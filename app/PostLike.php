@@ -4,9 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TweetLike extends Model
+class PostLike extends Model
 {
-    protected $fillable = ['tweet_id', 'user_id'];
+    protected $fillable = ['post_id', 'user_id'];
+
     public function user()
     {
         return $this->belongsTo('App\User');

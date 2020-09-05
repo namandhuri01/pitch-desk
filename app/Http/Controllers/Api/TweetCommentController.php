@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Tweet;
-use App\TweetComment;
+use App\Post;
+use App\PostComment;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\HttpException;
@@ -43,16 +43,16 @@ class TweetCommentController extends Controller
 
         $request->validate([
             'user_id' => 'bail|required|integer',
-            'tweet_user_id' => 'bail|required|integer',
-            'tweet_id' => 'bail|required|integer',
+            'post_user_id' => 'bail|required|integer',
+            'post_id' => 'bail|required|integer',
             'comment' => 'bail|required|string',
         ]);
         try {
 
-            $comment = TweetComment::create([
+            $comment = PostComment::create([
                 'user_id' =>   $request->user_id,
-                'tweet_id' =>  $request->tweet_id,
-                'tweet_user_id' => $request->tweet_user_id,
+                'post_id' =>  $request->post_id,
+                'post_user_id' => $request->post_user_id,
                 'comment' => $request->comment
             ]);
             return response()->json(['success'=>true, 'message' => 'Comment Done', 'data' => $comment], $this->successStatus);

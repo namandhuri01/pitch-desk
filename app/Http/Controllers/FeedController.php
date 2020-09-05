@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\User;
-use App\Tweet;
-use App\TweetImage;
+use App\Post;
+use App\PostImage;
 use Illuminate\Http\Request;
 
 class FeedController extends Controller

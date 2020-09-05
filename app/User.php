@@ -59,12 +59,12 @@ class User extends Authenticatable implements Following
     }
     public function getUserTotalLikesAttribute()
     {
-        return $this->hasMany('App\TweetLike')->count();
+        return $this->hasMany('App\PostLike')->count();
     }
 
     public function getUserTotalCommentsAttribute()
     {
-        return $this->hasMany('App\TweetComment')->count();
+        return $this->hasMany('App\PostComment')->count();
     }
 
     public function profile()
@@ -72,18 +72,18 @@ class User extends Authenticatable implements Following
         return $this->hasOne('App\UserProfile');
     }
 
-    public function tweets(){
-        return $this->hasMany('App\Tweet');
+    public function posts(){
+        return $this->hasMany('App\Post');
     }
 
     public function comments(){
-        return $this->hasMany('App\TweetComment');
+        return $this->hasMany('App\PostComment');
     }
 
 
     public function likes()
     {
-        return $this->hasMany(TweetLike::class);
+        return $this->hasMany(PostLike::class);
     }
 
 

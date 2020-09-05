@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Tweet extends Model
+class Post extends Model
 {
 
     protected $fillable = ['user_id', 'body'];
@@ -15,28 +15,28 @@ class Tweet extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function tweetComments()
+    public function postComments()
     {
-        return $this->hasMany(TweetComment::class);
+        return $this->hasMany(PostComment::class);
     }
 
-    public function tweetImages()
+    public function postImages()
     {
-        return $this->hasMany(TweetImage::class);
+        return $this->hasMany(PostImage::class);
     }
 
-    public function tweetLikes()
+    public function postLikes()
     {
-        return $this->hasMany(TweetLike::class);
+        return $this->hasMany(PostLike::class);
     }
 
     public function getTotalLikesAttribute()
     {
-        return $this->hasMany('App\TweetLike')->count();
+        return $this->hasMany('App\PostLike')->count();
     }
 
     public function getTotalCommentsAttribute()
     {
-        return $this->hasMany('App\TweetComment')->count();
+        return $this->hasMany('App\PostComment')->count();
     }
 }

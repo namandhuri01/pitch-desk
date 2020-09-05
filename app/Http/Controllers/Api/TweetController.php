@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use Auth;
 use App\User;
-use App\Tweet;
-use App\TweetImage;
-use App\TweetLike;
+use App\Post;
+use App\PostImage;
+use App\PostLike;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Symfony\Component\HttpKernel\Exception\HttpException;
@@ -34,7 +34,7 @@ class TweetController extends Controller
 
         $user_id = Auth::user()->id;
         // dd($user_id);
-        $tweet = Tweet::create([
+        $tweet = Post::create([
             'user_id' => $user_id,
             'body'    => $request->body
         ]);
@@ -65,10 +65,10 @@ class TweetController extends Controller
                 $imageName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
                 $imageExt = $image->getClientOriginalExtension();
                 $originalName = $imageName.'_'.time().'.'.$imageExt;
-                $desinationFolder = 'tweetImage/'.$user_id.'/'.$tweet_id;
+                $desinationFolder = 'postImage/'.$user_id.'/'.$tweet_id;
                 $image->move($desinationFolder, $originalName);
-                $photo = TweetImage::create([
-                    'tweet_id' => $tweet_id,
+                $photo = PostImage::create([
+                    'post_id' => $tweet_id,
                     'name'     => $originalName,
                     'path'     => $desinationFolder,
                 ]);
@@ -80,14 +80,14 @@ class TweetController extends Controller
     public function like(Request $request){
 
 
-        $find = TweetLike::where('tweet_id', $request->tweet_id)->where('user_id',$request->user_id)->first();
+        $find = PostLike::where('post_id', $request->post_id)->where('user_id',$request->user_id)->first();
     //    dd($find);
         if($find != null){
             $find->delete();
             return response()->json(['success'=>true, 'message' => 'Post unlike successfull'],$this-> successStatus);
         }
-        $like = TweetLike::create([
-            'tweet_id' => $request->tweet_id,
+        $like = PostLike::create([
+            'post_id' => $request->post_id,
             'user_id' => $request->user_id
         ]);
         return response()->json(['success'=>true, 'message' => 'Post liked successfull'],$this-> successStatus);
