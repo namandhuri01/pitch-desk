@@ -13,4 +13,8 @@ class Tweet extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public function tweetImage(){
+        return $this->hasMany('App\TweetImage');
+    }
 }
