@@ -6,6 +6,7 @@ use Auth;
 use App\User;
 use App\Tweet;
 use App\TweetImage;
+use App\TweetLike;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Symfony\Component\HttpKernel\Exception\HttpException;
@@ -73,5 +74,23 @@ class TweetController extends Controller
                 ]);
             }
         }
+    }
+
+
+    public function like(Request $request){
+
+
+        $find = TweetLike::where('tweet_id', $request->tweet_id)->where('user_id',$request->user_id)->first();
+    //    dd($find);
+        if($find != null){
+            $find->delete();
+            return response()->json(['success'=>true, 'message' => 'Post unlike successfull'],$this-> successStatus);
+        }
+        $like = TweetLike::create([
+            'tweet_id' => $request->tweet_id,
+            'user_id' => $request->user_id
+        ]);
+        return response()->json(['success'=>true, 'message' => 'Post liked successfull'],$this-> successStatus);
+
     }
 }

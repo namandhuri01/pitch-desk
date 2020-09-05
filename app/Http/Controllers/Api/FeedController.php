@@ -13,6 +13,26 @@ class FeedController extends Controller
 {
     public $successStatus = 200;
 
+    public function index() {
+        $userId = Auth::user()->id;
+
+        $tweets = Tweet::with([
+            'user' => function($query) {
+                return $query->with([
+                    'profile'
+                ]);
+            },
+            'tweetComments.user.profile',
+            'tweetImages',
+            'tweetLikes.user.profile',
+        ])->where('user_id', '=', $userId)->get();
+
+        return response()->json([
+            'status'=> true,
+            'message' => 'all records',
+            'data'=>$tweets
+        ], $this-> successStatus);
+    }
 
     public function follow(Request $request)
     {

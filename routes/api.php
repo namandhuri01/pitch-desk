@@ -27,4 +27,6 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::post('tweet','Api\TweetController@store');
     Route::get('tweet','Api\TweetController@index');
     Route::post('tweet-comment','Api\TweetCommentController@store');
+    Route::get('tweets','Api\FeedController@index')->name('tweets');
+    Route::post('tweet-like','Api\TweetController@like');
 });

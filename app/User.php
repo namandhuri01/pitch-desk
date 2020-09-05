@@ -40,7 +40,7 @@ class User extends Authenticatable implements Following
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    protected $appends = ['thumb_image', 'photo'];
+    protected $appends = ['thumb_image', 'photo','user_total_likes', 'user_total_comments'];
 
     public function getThumbImageAttribute()
     {
@@ -57,6 +57,15 @@ class User extends Authenticatable implements Following
         }
         return '/images/profile.png';
     }
+    public function getUserTotalLikesAttribute()
+    {
+        return $this->hasMany('App\TweetLike')->count();
+    }
+
+    public function getUserTotalCommentsAttribute()
+    {
+        return $this->hasMany('App\TweetComment')->count();
+    }
 
     public function profile()
     {
@@ -70,4 +79,12 @@ class User extends Authenticatable implements Following
     public function comments(){
         return $this->hasMany('App\TweetComment');
     }
+
+
+    public function likes()
+    {
+        return $this->hasMany(TweetLike::class);
+    }
+
+
 }
