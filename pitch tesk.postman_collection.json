@@ -21,17 +21,18 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"email\":\"namandhuri01@gmail.com\",\n\t\"password\":\"12345678\"\n}"
+					"raw": "{\n\t\"username\":\"naman\",\n\t\"password\":\"12345678\"\n}"
 				},
 				"url": {
-					"raw": "127.0.0.1:8000/api/login",
+					"raw": "http://127.0.0.1:8100/api/login",
+					"protocol": "http",
 					"host": [
 						"127",
 						"0",
 						"0",
 						"1"
 					],
-					"port": "8000",
+					"port": "8100",
 					"path": [
 						"api",
 						"login"
@@ -62,17 +63,17 @@
 					"formdata": [
 						{
 							"key": "first_name",
-							"value": "rajnish",
+							"value": "Naman",
 							"type": "text"
 						},
 						{
 							"key": "last_name",
-							"value": "kumar",
+							"value": "Mehta",
 							"type": "text"
 						},
 						{
 							"key": "email",
-							"value": "test1@gmail.com",
+							"value": "naman.mehta54@gmail.com",
 							"type": "text"
 						},
 						{
@@ -88,7 +89,8 @@
 						{
 							"key": "photo",
 							"type": "file",
-							"src": ""
+							"src": [],
+							"disabled": true
 						},
 						{
 							"key": "profile[title]",
@@ -159,11 +161,26 @@
 							"key": "profile[verification]",
 							"value": "fbfdbfdbfbsddsvfvfd",
 							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "naman",
+							"type": "text"
+						},
+						{
+							"key": "profile[payment_information]",
+							"value": "timepass",
+							"type": "text"
+						},
+						{
+							"key": "profile[company_description]",
+							"value": "developer",
+							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/register",
+					"raw": "http://127.0.0.1:8100/api/register",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -171,7 +188,7 @@
 						"0",
 						"1"
 					],
-					"port": "8000",
+					"port": "8100",
 					"path": [
 						"api",
 						"register"
@@ -187,7 +204,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImJhZmYyODBkOTgxYWJhMjc3MzA3ZWJiYzI3ZWEwZjE0OWRjODgyZDZjNjEyNjc5NDhkMjZlNzcxMjZkOTMzZWE1ZTcxMDA1NmQzNDA5NWU5In0.eyJhdWQiOiIxIiwianRpIjoiYmFmZjI4MGQ5ODFhYmEyNzczMDdlYmJjMjdlYTBmMTQ5ZGM4ODJkNmM2MTI2Nzk0OGQyNmU3NzEyNmQ5MzNlYTVlNzEwMDU2ZDM0MDk1ZTkiLCJpYXQiOjE1OTY4NzYwNzcsIm5iZiI6MTU5Njg3NjA3NywiZXhwIjoxNjI4NDEyMDc3LCJzdWIiOiI3Iiwic2NvcGVzIjpbXX0.kEjNfdY22wsIRAtCHw7k1Xba-h9LE-TvvP5zm3TGsmb6ll9jUX9L0N2dEcJomlxvmS7gL7z8xC6OY8I0IL6nSusEfp8bH-L8LCJ-tk6nN8r-2_OY_MM0ewariZgfU-j7R0hz15obml6HSPJfCTHbSXtGp540Ar15XwV_WybN7R4t7fMqzJgb2PxlsnNDjUTtptMFwTKbWIR5FTDrEBwwbmnjMuZOk_g3n9c_3KWfvXJRA3g2HvzST80j83Ta4zVX_TW8TrH5Mu8evO2TPYsfC74iThrr-RDvqV2jxhrK4nq_ZUKiq-kNi7lCKFhvDUQa2JbGpha0AxKFmJyQNiW1FgA-5FzHy7-MWx5oPUqmxYCEsUmZ-jnMYhdrGadKrqXrkQ5ccioi8C74NjKDwSjBEv-0X8dH_YjPVVMjpMCNG3b3EP88jzKkr_Bi2SJhRCgTd11BwsBi6i8JmeAWEGtdUiWO0yLf3ZjCJ1uz5Dg_151ZAVK8Sy53xe0JL0nzWWTl4iwO7VJ-E8-IqWfA__k8e3U_o6J9ZK2fZ-G3qywsdjm-dvFA1mcaKR_my3I5_UhJ7kiUxL3xkBrdGLHEtkNM_j11dxFt-3d8413gTPPdJXxp3mUOj_b2ratDTjecuw5-8xHPKbYh2lGYXnX6j2h0U2qZoZGfJ6FVwgrWA2QcX9M",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjU0NzVkODI4MmU0MDEwYmRiOTA4ODE5MjBkODViM2EyNDFiZDAwY2Q1NzgyN2QxODhkYWYxOGFlZGYyYTliNmVjMGJlMmQ0ZWM5OTEwYTQ1In0.eyJhdWQiOiIxIiwianRpIjoiNTQ3NWQ4MjgyZTQwMTBiZGI5MDg4MTkyMGQ4NWIzYTI0MWJkMDBjZDU3ODI3ZDE4OGRhZjE4YWVkZjJhOWI2ZWMwYmUyZDRlYzk5MTBhNDUiLCJpYXQiOjE1OTc0NzM5MTgsIm5iZiI6MTU5NzQ3MzkxOCwiZXhwIjoxNjI5MDA5OTE4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.D_HTDXHBRW38JCHCG0p_B1r2cYeQrM9s_iV3bFlofoEeN_fU66k1CS0pb6MurqPujVVBcouLkd-egNP1NlsFWhFSNgoRKC2vodwfxfUtO_0iw149406zhuEQPBRkjXi_oihcCgnbpmPUl9PgW5y-Zs_boDw4rYIWRbqODQ6B-o2q6QLb3PzKh_DjAtxUYDqfL3Zh-N6vrOvS3dLnLc8gDuiaNaXdzrBztuqqTmS3cQwDNsrY9EeExACzftWFxOyKtE0DKL2eIfdLfNJDt68EsR2iGh9eZ0FeyopYYuG2_S0LKaG2KdhNZ2A6IyzXvCgut4VUXwwxBv6s0kEOeN7I9npZyRmQHlEy6xUZ_QQzuTO6Pg5T37QytChtfLdNTXgCK7aTkQQcZIAZtM6Z3TLUlD_hFctYxunHdsvXqqy6N_VtVYg7XuqhTvTjf_ucqmRhsj6ew2v6CZHTRWeIiZSDx6xESJKK4AUSpHv9CvmR75cyeZzujK8HRhU2KAqYwKcQf9Gr6QXe16Epsc6gmK3AIH7No8-k2lRIFTdZ4BrmoR8U3ktazoQa9m7JhijXo8RDAws2EyTGl9RYqcAdMY2CWKSI3S2-zKjx1_dVOJRaL5zhra5dIZcPwEHSevyXEzi9wTjAoVe6amq0WRZZLLJOcHcGJg_MJAvTVbhifkmgG5A",
 						"type": "text"
 					},
 					{
@@ -202,12 +219,113 @@
 					}
 				],
 				"body": {
-					"mode": "raw",
-					"raw": ""
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "2",
+							"type": "text"
+						}
+					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/details",
+					"raw": "http://127.0.0.1:8100/api/details",
 					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8100",
+					"path": [
+						"api",
+						"details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user log out",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjU0NzVkODI4MmU0MDEwYmRiOTA4ODE5MjBkODViM2EyNDFiZDAwY2Q1NzgyN2QxODhkYWYxOGFlZGYyYTliNmVjMGJlMmQ0ZWM5OTEwYTQ1In0.eyJhdWQiOiIxIiwianRpIjoiNTQ3NWQ4MjgyZTQwMTBiZGI5MDg4MTkyMGQ4NWIzYTI0MWJkMDBjZDU3ODI3ZDE4OGRhZjE4YWVkZjJhOWI2ZWMwYmUyZDRlYzk5MTBhNDUiLCJpYXQiOjE1OTc0NzM5MTgsIm5iZiI6MTU5NzQ3MzkxOCwiZXhwIjoxNjI5MDA5OTE4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.D_HTDXHBRW38JCHCG0p_B1r2cYeQrM9s_iV3bFlofoEeN_fU66k1CS0pb6MurqPujVVBcouLkd-egNP1NlsFWhFSNgoRKC2vodwfxfUtO_0iw149406zhuEQPBRkjXi_oihcCgnbpmPUl9PgW5y-Zs_boDw4rYIWRbqODQ6B-o2q6QLb3PzKh_DjAtxUYDqfL3Zh-N6vrOvS3dLnLc8gDuiaNaXdzrBztuqqTmS3cQwDNsrY9EeExACzftWFxOyKtE0DKL2eIfdLfNJDt68EsR2iGh9eZ0FeyopYYuG2_S0LKaG2KdhNZ2A6IyzXvCgut4VUXwwxBv6s0kEOeN7I9npZyRmQHlEy6xUZ_QQzuTO6Pg5T37QytChtfLdNTXgCK7aTkQQcZIAZtM6Z3TLUlD_hFctYxunHdsvXqqy6N_VtVYg7XuqhTvTjf_ucqmRhsj6ew2v6CZHTRWeIiZSDx6xESJKK4AUSpHv9CvmR75cyeZzujK8HRhU2KAqYwKcQf9Gr6QXe16Epsc6gmK3AIH7No8-k2lRIFTdZ4BrmoR8U3ktazoQa9m7JhijXo8RDAws2EyTGl9RYqcAdMY2CWKSI3S2-zKjx1_dVOJRaL5zhra5dIZcPwEHSevyXEzi9wTjAoVe6amq0WRZZLLJOcHcGJg_MJAvTVbhifkmgG5A"
+					}
+				],
+				"url": {
+					"raw": "127.0.0.1:8100/api/logout",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8100",
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Comment post Api",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM4MjY1ODZhMzhmODBlZmJiYjE0MzNjODUzYWJkNjgzNGU1MTkxZjhhMWEyZTc4ZWQwNGE1Yzk3NzM4ZGU3ODEzY2Y4M2FlNzUzZDAzNzFmIn0.eyJhdWQiOiIxIiwianRpIjoiMzgyNjU4NmEzOGY4MGVmYmJiMTQzM2M4NTNhYmQ2ODM0ZTUxOTFmOGExYTJlNzhlZDA0YTVjOTc3MzhkZTc4MTNjZjgzYWU3NTNkMDM3MWYiLCJpYXQiOjE1OTkyODU1MDcsIm5iZiI6MTU5OTI4NTUwNywiZXhwIjoxNjMwODIxNTA3LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.JADnvKZhHWxog04Hsj9CQ-rWS05q2LOWfiatQwiwGkttXmlvvQjJkvstkaOS-xrGN_ELvAcZ8UrKPKI4t_R07RNySmyJRu5ljvDZIyICiyYnYsTFmTiI-okSmSNgf4llyCk8MRWO6oNlegodIdnIe_wLdVr1pjU7876--bEGJFd3bSdPRNdLg1gpdaIT0K5l4Y91rWxv-znSisI09LCNMXyIpyG5s6fGyqC8g2i_3YHC-zt0vEMWfsut3u3mcnHg8Mh6zUYrBzzzMLZsVwImpHNZKVVFI7Q5MI5aAxknozcr4F2Qis_osAG3OhuWBZfFGYo3wNVP6R9-EmXNpi_iJgOBJm_zhbz7jUZ_ammvbGJU339h857pzQ8NoVV21JUGBODMIqHeU82dAYMWc4P_ZO8YufflI6_aD9o0YBLl-htq1ZIKkXvN-CuIvBCQIaFk3ECjgzw-tLNsl0Vi2uwGEKubSu4doRPPz15nhX5iiJZ1ttqA27YXdp_EcwZsqwUU8xMFUYv8jppQQaFYuNH4rJu9lrTmR5sb4XFj5HCL8ojwaI24T_LoY0qpKXG7H42dqm06Tm1tVVNSL2YMJXD82Er62H0jtwkmj1MmCyeNaCcNtcL_xfFQIx6ypvp2qafEsCDXPfC-X2GC54oTylE0gQDPQs5dGJ843J8oAnH_3vM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "tweet_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "tweet_user_id",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "comment",
+							"value": "nice picture",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/tweet-comment",
 					"host": [
 						"127",
 						"0",
@@ -217,7 +335,80 @@
 					"port": "8000",
 					"path": [
 						"api",
-						"details"
+						"tweet-comment"
+					],
+					"query": [
+						{
+							"key": "Accept",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tweet Post APi",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM4MjY1ODZhMzhmODBlZmJiYjE0MzNjODUzYWJkNjgzNGU1MTkxZjhhMWEyZTc4ZWQwNGE1Yzk3NzM4ZGU3ODEzY2Y4M2FlNzUzZDAzNzFmIn0.eyJhdWQiOiIxIiwianRpIjoiMzgyNjU4NmEzOGY4MGVmYmJiMTQzM2M4NTNhYmQ2ODM0ZTUxOTFmOGExYTJlNzhlZDA0YTVjOTc3MzhkZTc4MTNjZjgzYWU3NTNkMDM3MWYiLCJpYXQiOjE1OTkyODU1MDcsIm5iZiI6MTU5OTI4NTUwNywiZXhwIjoxNjMwODIxNTA3LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.JADnvKZhHWxog04Hsj9CQ-rWS05q2LOWfiatQwiwGkttXmlvvQjJkvstkaOS-xrGN_ELvAcZ8UrKPKI4t_R07RNySmyJRu5ljvDZIyICiyYnYsTFmTiI-okSmSNgf4llyCk8MRWO6oNlegodIdnIe_wLdVr1pjU7876--bEGJFd3bSdPRNdLg1gpdaIT0K5l4Y91rWxv-znSisI09LCNMXyIpyG5s6fGyqC8g2i_3YHC-zt0vEMWfsut3u3mcnHg8Mh6zUYrBzzzMLZsVwImpHNZKVVFI7Q5MI5aAxknozcr4F2Qis_osAG3OhuWBZfFGYo3wNVP6R9-EmXNpi_iJgOBJm_zhbz7jUZ_ammvbGJU339h857pzQ8NoVV21JUGBODMIqHeU82dAYMWc4P_ZO8YufflI6_aD9o0YBLl-htq1ZIKkXvN-CuIvBCQIaFk3ECjgzw-tLNsl0Vi2uwGEKubSu4doRPPz15nhX5iiJZ1ttqA27YXdp_EcwZsqwUU8xMFUYv8jppQQaFYuNH4rJu9lrTmR5sb4XFj5HCL8ojwaI24T_LoY0qpKXG7H42dqm06Tm1tVVNSL2YMJXD82Er62H0jtwkmj1MmCyeNaCcNtcL_xfFQIx6ypvp2qafEsCDXPfC-X2GC54oTylE0gQDPQs5dGJ843J8oAnH_3vM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "body",
+							"value": "kjdvbdhvbdv djv hdgvdjc dhvdhvbdsvdhsj",
+							"type": "text"
+						},
+						{
+							"key": "image[]",
+							"type": "file",
+							"src": [
+								"/C:/Users/Naman Mehta/Desktop/tech solution/0.jpg",
+								"/C:/Users/Naman Mehta/Desktop/tech solution/1st.png",
+								"/C:/Users/Naman Mehta/Desktop/tech solution/2nd.png",
+								"/C:/Users/Naman Mehta/Desktop/tech solution/3rd.png"
+							]
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/tweet",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tweet"
+					],
+					"query": [
+						{
+							"key": "Accept",
+							"value": "",
+							"disabled": true
+						}
 					]
 				}
 			},

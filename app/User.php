@@ -66,4 +66,8 @@ class User extends Authenticatable implements Following
     public function tweets(){
         return $this->hasMany('App\Tweet');
     }
+
+    public function comments(){
+        return $this->hasMany('App\TweetComment');
+    }
 }

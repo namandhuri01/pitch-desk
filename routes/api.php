@@ -26,4 +26,5 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::get('unfollow', 'Api\FeedController@unfollow');
     Route::post('tweet','Api\TweetController@store');
     Route::get('tweet','Api\TweetController@index');
+    Route::post('tweet-comment','Api\TweetCommentController@store');
 });

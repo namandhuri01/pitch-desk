@@ -17,4 +17,7 @@ class Tweet extends Model
     public function tweetImage(){
         return $this->hasMany('App\TweetImage');
     }
+    public function tweetComment(){
+        return $this->hasMany('App\TweetComment');
+    }
 }
