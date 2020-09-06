@@ -20,7 +20,7 @@ class User extends Authenticatable implements Following
      * @var array
      */
     protected $fillable = [
-        'first_name','last_name', 'email', 'password', 'username'
+        'first_name','last_name', 'password', 'username'
     ];
 
     /**
@@ -40,7 +40,7 @@ class User extends Authenticatable implements Following
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    protected $appends = ['thumb_image', 'photo','user_total_likes', 'user_total_comments'];
+    protected $appends = ['thumb_image','image','user_total_likes', 'user_total_comments'];
 
     public function getThumbImageAttribute()
     {
@@ -49,14 +49,15 @@ class User extends Authenticatable implements Following
         }
         return '/images/profile.png';
     }
-
-    public function getPhotoAttribute()
+    public function getImageAttribute()
     {
+
         if(!empty($this->profile)) {
-           return $this->profile->photo;
+            return $this->profile->image;
         }
         return '/images/profile.png';
     }
+
     public function getUserTotalLikesAttribute()
     {
         return $this->hasMany('App\PostLike')->count();
